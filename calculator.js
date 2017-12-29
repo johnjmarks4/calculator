@@ -35,6 +35,14 @@ for (i=0; i < 9; i++) {
   keypad.appendChild(div);
 }
 
+var displayNumber;
+
+buttons = document.querySelectorAll('.calButtons');
+buttons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    displayNumber = parseInt(button.textContent);
+  })
+})
 /*
 container = document.querySelector('#container');
 paragraph = document.createElement('p');

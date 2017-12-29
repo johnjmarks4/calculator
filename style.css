@@ -1,4 +1,7 @@
 #calculator {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
   width: 400px;
   height: 600px;
   margin: 0 auto;
@@ -6,15 +9,22 @@
   border-radius: 5px;
 }
 
+#display {
+  height: 60px;
+  width: 90%;
+  background-color: white;
+  margin: 30px auto;
+  border: thin solid rgb(193, 193, 193);
+}
+
 #keypad {
-  position: relative;
-  top: 30%;
-  width: 95%;
-  height: 400px;
-  margin: 0 auto;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
+  position: relative;
+  width: 95%;
+  height: 400px;
+  margin: 0 auto;
 }
 
 .calButtons {
