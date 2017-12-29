@@ -27,8 +27,17 @@ function operator(op, num1, num2) {
   }
 }
 
+keypad = document.querySelector('#keypad');
+for (i=0; i < 9; i++) {
+  div = document.createElement('div');
+  div.setAttribute('class', 'calButtons');
+  div.textContent = i;
+  keypad.appendChild(div);
+}
+
+/*
 container = document.querySelector('#container');
-container.setAttribute("style", "width: 1060px");
 paragraph = document.createElement('p');
 paragraph.textContent = operator('-', 1, 1);
 container.appendChild(paragraph);
+*/

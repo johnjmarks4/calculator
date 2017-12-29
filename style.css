@@ -1,0 +1,30 @@
+#calculator {
+  width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #E9EBEE;
+  border-radius: 5px;
+}
+
+#keypad {
+  position: relative;
+  top: 30%;
+  width: 95%;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.calButtons {
+  font-size: 60px;
+  text-align: center;
+  height: 110px;
+  padding: 0 36.6px;
+  margin-top: 10px;
+  margin-left: 10px;
+  line-height: 110px;
+  background-color: rgb(246, 247, 249);
+  border: thick solid rgb(193, 193, 193);
+}
