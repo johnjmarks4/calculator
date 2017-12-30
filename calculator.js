@@ -27,6 +27,25 @@ function operator(op, num1, num2) {
   }
 }
 
+function calculate(ary) {
+  var result;
+  str = ary.join('');
+  while (str.length > 0) {
+    // Breaks down expressions with more than one operator
+    if (result == undefined) {
+      operand = str.substr(0, 3).split('');
+      str = str.substr(3);
+      result = operator(operand[1], parseInt(operand[0]), parseInt(operand[2]));
+    } else {
+      operand = str.substr(0, 2).split('');
+      str = str.substr(2);
+      result = operator(operand[0], result, parseInt(operand[1]));
+    }
+  }
+  input = document.querySelector('input');
+  input.setAttribute('value', result);
+}
+
 calculator = document.querySelector('#calculator');
 for (i=1; i < 10; i++) {
   div = document.createElement('div');
@@ -42,19 +61,29 @@ for (i=1; i < 10; i++) {
   calculator.appendChild(div);
 })
 
-var displayNumber;
+equals = document.querySelectorAll('.calButtons');
+equals[equals.length - 1].setAttribute('id', 'equals');
 
-buttons = document.querySelectorAll('.calButtons');
+var displayNumber;
+var expression = [];
+
+buttons = document.querySelectorAll('.calButtons, .operation_buttons');
 buttons.forEach(function(button) {
   button.addEventListener('click', function() {
-    displayNumber = parseInt(button.textContent);
+    if (displayNumber != undefined) {
+      expression.push(displayNumber);
+    }
+    if (button.id == "equals") {
+      return calculate(expression);
+    } else if (button.className == "operation_buttons") {
+      displayNumber = button.textContent;
+    } else {
+      displayNumber = parseInt(button.textContent);
+    }
+
     input = document.querySelector('input');
     input.setAttribute('value', displayNumber);
+
+    console.log(expression);
   })
 })
-/*
-container = document.querySelector('#container');
-paragraph = document.createElement('p');
-paragraph.textContent = operator('-', 1, 1);
-container.appendChild(paragraph);
-*/
