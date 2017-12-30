@@ -61,8 +61,9 @@ for (i=1; i < 10; i++) {
   calculator.appendChild(div);
 })
 
-equals = document.querySelectorAll('.calButtons');
-equals[equals.length - 1].setAttribute('id', 'equals');
+calButtons = document.querySelectorAll('.calButtons');
+calButtons[calButtons.length - 1].setAttribute('id', 'equals');
+calButtons[calButtons.length - 2].setAttribute('id', 'clear');
 
 var displayNumber;
 var expression = [];
@@ -77,6 +78,9 @@ buttons.forEach(function(button) {
       return calculate(expression);
     } else if (button.className == "operation_buttons") {
       displayNumber = button.textContent;
+    } else if (button.id == "clear") {
+      displayNumber = "";
+      expression = [];
     } else {
       displayNumber = parseInt(button.textContent);
     }
