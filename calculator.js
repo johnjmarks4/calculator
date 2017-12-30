@@ -28,7 +28,7 @@ function operator(op, num1, num2) {
 }
 
 keypad = document.querySelector('#keypad');
-for (i=0; i < 9; i++) {
+for (i=0; i < 10; i++) {
   div = document.createElement('div');
   div.setAttribute('class', 'calButtons');
   div.textContent = i;
@@ -41,6 +41,8 @@ buttons = document.querySelectorAll('.calButtons');
 buttons.forEach(function(button) {
   button.addEventListener('click', function() {
     displayNumber = parseInt(button.textContent);
+    input = document.querySelector('input');
+    input.setAttribute('value', displayNumber);
   })
 })
 /*

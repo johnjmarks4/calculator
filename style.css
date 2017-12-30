@@ -10,31 +10,46 @@
 }
 
 #display {
+  order: 1;
   height: 60px;
   width: 90%;
   background-color: white;
-  margin: 30px auto;
+  margin: 20px 20px;
+  margin-top: 0;
   border: thin solid rgb(193, 193, 193);
+  font-size: 40px;
+  padding-left: 20px;
 }
 
 #keypad {
+  order: 2;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  position: relative;
-  width: 95%;
+  justify-content: space-evenly;
+  width: 340px;
   height: 400px;
   margin: 0 auto;
+}
+
+.operation_buttons {
+  width: 59px;
+  height: 58px;
+  text-align: center;
+  line-height: 59px;
+  padding: 0 5px;
+  font-size: 40px;
+  background-color: #f44336;
+  border: medium solid rgb(193, 193, 193);
 }
 
 .calButtons {
   font-size: 60px;
   text-align: center;
-  height: 110px;
-  padding: 0 36.6px;
+  height: 73px;
+  padding: 0 31.6px;
   margin-top: 10px;
-  margin-left: 10px;
-  line-height: 110px;
+  line-height: 73px;
   background-color: rgb(246, 247, 249);
   border: thick solid rgb(193, 193, 193);
 }
