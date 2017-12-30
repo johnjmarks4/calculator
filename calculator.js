@@ -27,13 +27,20 @@ function operator(op, num1, num2) {
   }
 }
 
-keypad = document.querySelector('#keypad');
-for (i=0; i < 10; i++) {
+calculator = document.querySelector('#calculator');
+for (i=1; i < 10; i++) {
   div = document.createElement('div');
   div.setAttribute('class', 'calButtons');
   div.textContent = i;
-  keypad.appendChild(div);
+  calculator.appendChild(div);
 }
+
+[9, 'C', '='].filter(function(sym) {
+  div = document.createElement('div');
+  div.setAttribute('class', 'calButtons');
+  div.textContent = sym;
+  calculator.appendChild(div);
+})
 
 var displayNumber;
 

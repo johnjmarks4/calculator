@@ -5,8 +5,10 @@
   width: 400px;
   height: 600px;
   margin: 0 auto;
+  padding: 20px 10px;
   background-color: #E9EBEE;
   border-radius: 5px;
+  justify-content: space-evenly;
 }
 
 #display {
@@ -21,29 +23,21 @@
   padding-left: 20px;
 }
 
-#keypad {
-  order: 2;
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 340px;
-  height: 400px;
-  margin: 0 auto;
-}
-
 .operation_buttons {
+  order: 2;
   width: 59px;
   height: 58px;
   text-align: center;
-  line-height: 59px;
+  line-height: 58px;
   padding: 0 5px;
   font-size: 40px;
   background-color: #f44336;
+  color: white;
   border: medium solid rgb(193, 193, 193);
 }
 
 .calButtons {
+  order: 3;
   font-size: 60px;
   text-align: center;
   height: 73px;
