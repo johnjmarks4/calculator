@@ -28,6 +28,9 @@ function operator(op, num1, num2) {
 }
 
 function calculate(ary) {
+  if (ary.length < 3) {
+    return ary.find(char => typeof(char) === 'number');
+  }
   var result;
   str = ary.join('');
   while (str.length > 0) {
@@ -42,8 +45,7 @@ function calculate(ary) {
       result = operator(operand[0], result, parseInt(operand[1]));
     }
   }
-  input = document.querySelector('input');
-  input.setAttribute('value', result);
+  return result;
 }
 
 calculator = document.querySelector('#calculator');
@@ -74,8 +76,18 @@ buttons.forEach(function(button) {
     if (displayNumber != undefined) {
       expression.push(displayNumber);
     }
+    // refactor
     if (button.id == "equals") {
-      return calculate(expression);
+      result = calculate(expression).toString();
+      console.log(result.toString().length);
+      if (result.length > 15) {
+        result = result.slice(0, 15);
+      }
+      input = document.querySelector('input');
+      input.setAttribute('value', result);
+      expression = [];
+      displayNumber = undefined;
+      return;
     } else if (button.className == "operation_buttons") {
       displayNumber = button.textContent;
     } else if (button.id == "clear") {
@@ -87,7 +99,5 @@ buttons.forEach(function(button) {
 
     input = document.querySelector('input');
     input.setAttribute('value', displayNumber);
-
-    console.log(expression);
   })
 })
